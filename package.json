@@ -1,0 +1,35 @@
+{
+  "name": "@local/dsh-coding-mode",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "VS Code-like coding panel for DeepSeek Harness: workspace file tree plus a multi-tab editor, mounted as a global main panel.",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "package.json",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ],
+      "platform": "web"
+    }
+  },
+  "dependencies": {
+    "shiki": "^4.5.0"
+  }
+}

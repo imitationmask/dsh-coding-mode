@@ -1,0 +1,8 @@
+# Bundle layer for @local/dsh-coding-mode.
+#
+# Applied before the profile's own cordis.patch.yml. It only inserts the
+# plugin row, so a profile installs the workbench by naming this package in
+# `dsh.profile.bundles` — no hand-written patch entry is needed.
+- insert:
+    - id: coding-mode
+      name: "@local/dsh-coding-mode"
